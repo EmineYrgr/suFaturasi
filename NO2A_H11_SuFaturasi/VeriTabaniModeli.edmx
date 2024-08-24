@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SuFaturasi_NO2AModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fatura">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriID" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="smalldatetime" Nullable="false" />
+          <Property Name="SonOdemeTarihi" Type="date" Nullable="false" />
+          <Property Name="IlkEndeks" Type="int" Nullable="false" />
+          <Property Name="SonEndeks" Type="int" Nullable="false" />
+          <Property Name="Tutar" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IlceAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Il_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Il_Adi" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="25" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="10" />
+          <Property Name="Yetki" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TCKN" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SayacNo" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="CepTelefonu" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Il_ID" Type="int" Nullable="false" />
+          <Property Name="Ilce_ID" Type="int" Nullable="false" />
+          <Property Name="AboneTuru" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SuFaturasi_NO2A.dbo.View_MusteriList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_MusteriList">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="TCKN" />
+            <PropertyRef Name="AdSoyad" />
+            <PropertyRef Name="SayacNo" />
+            <PropertyRef Name="CepTelefonu" />
+            <PropertyRef Name="Adres" />
+            <PropertyRef Name="Il_ID" />
+            <PropertyRef Name="Ilce_ID" />
+            <PropertyRef Name="IlceAdi" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TCKN" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SayacNo" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="CepTelefonu" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Il_ID" Type="int" Nullable="false" />
+          <Property Name="Ilce_ID" Type="int" Nullable="false" />
+          <Property Name="Il_Adi" Type="nvarchar" MaxLength="255" />
+          <Property Name="IlceAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuFaturasi_NO2AModelStoreContainer">
+          <EntitySet Name="Fatura" EntityType="Self.Fatura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_MusteriList" EntityType="Self.View_MusteriList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_MusteriList].[ID] AS [ID], 
+    [View_MusteriList].[TCKN] AS [TCKN], 
+    [View_MusteriList].[AdSoyad] AS [AdSoyad], 
+    [View_MusteriList].[SayacNo] AS [SayacNo], 
+    [View_MusteriList].[CepTelefonu] AS [CepTelefonu], 
+    [View_MusteriList].[Adres] AS [Adres], 
+    [View_MusteriList].[Il_ID] AS [Il_ID], 
+    [View_MusteriList].[Ilce_ID] AS [Ilce_ID], 
+    [View_MusteriList].[Il_Adi] AS [Il_Adi], 
+    [View_MusteriList].[IlceAdi] AS [IlceAdi]
+    FROM [dbo].[View_MusteriList] AS [View_MusteriList]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SuFaturasi_NO2AModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IlceAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Il_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Il_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mail" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Yetki" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TCKN" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SayacNo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CepTelefonu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Il_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ilce_ID" Type="Int32" Nullable="false" />
+          <Property Name="AboneTuru" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_MusteriList">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="TCKN" />
+            <PropertyRef Name="AdSoyad" />
+            <PropertyRef Name="SayacNo" />
+            <PropertyRef Name="CepTelefonu" />
+            <PropertyRef Name="Adres" />
+            <PropertyRef Name="Il_ID" />
+            <PropertyRef Name="Ilce_ID" />
+            <PropertyRef Name="IlceAdi" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TCKN" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SayacNo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CepTelefonu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Il_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ilce_ID" Type="Int32" Nullable="false" />
+          <Property Name="Il_Adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IlceAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuFaturasi_NO2AEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ilceler" EntityType="Self.ilceler" />
+          <EntitySet Name="iller" EntityType="Self.iller" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+          <EntitySet Name="View_MusteriList" EntityType="Self.View_MusteriList" />
+          <EntitySet Name="Fatura" EntityType="SuFaturasi_NO2AModel.Fatura" />
+        </EntityContainer>
+        <EntityType Name="Fatura">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriID" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SonOdemeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IlkEndeks" Type="Int32" Nullable="false" />
+          <Property Name="SonEndeks" Type="Int32" Nullable="false" />
+          <Property Name="Tutar" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SuFaturasi_NO2AModelStoreContainer" CdmEntityContainer="SuFaturasi_NO2AEntities">
+          <EntitySetMapping Name="ilceler">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.ilceler">
+              <MappingFragment StoreEntitySet="ilceler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+                <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iller">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.iller">
+              <MappingFragment StoreEntitySet="iller">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Il_Adi" ColumnName="Il_Adi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="AboneTuru" ColumnName="AboneTuru" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="SayacNo" ColumnName="SayacNo" />
+                <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+                <ScalarProperty Name="Ilce_ID" ColumnName="Ilce_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_MusteriList">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.View_MusteriList">
+              <MappingFragment StoreEntitySet="View_MusteriList">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="SayacNo" ColumnName="SayacNo" />
+                <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+                <ScalarProperty Name="Ilce_ID" ColumnName="Ilce_ID" />
+                <ScalarProperty Name="Il_Adi" ColumnName="Il_Adi" />
+                <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fatura">
+            <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Fatura">
+              <MappingFragment StoreEntitySet="Fatura">
+                <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="SonEndeks" ColumnName="SonEndeks" />
+                <ScalarProperty Name="IlkEndeks" ColumnName="IlkEndeks" />
+                <ScalarProperty Name="SonOdemeTarihi" ColumnName="SonOdemeTarihi" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

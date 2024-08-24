@@ -1,0 +1,15 @@
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\NO2A_H08_SuFaturasi.exe.config
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\NO2A_H08_SuFaturasi.exe
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\NO2A_H08_SuFaturasi.pdb
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.csproj.AssemblyReference.cache
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.Properties.Resources.resources
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.csproj.GenerateResource.cache
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.csproj.CoreCompileInputs.cache
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.exe
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.pdb
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\EntityFramework.dll
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\EntityFramework.xml
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.FrmGiris.resources
+C:\Users\OGRCAD\Desktop\NO2A_H08_SuFaturasi\NO2A_H08_SuFaturasi\obj\Debug\NO2A_H08_SuFaturasi.csproj.CopyComplete

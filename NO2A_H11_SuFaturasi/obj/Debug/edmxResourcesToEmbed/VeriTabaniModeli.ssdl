@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SuFaturasi_NO2AModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fatura">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusteriID" Type="int" Nullable="false" />
+    <Property Name="Tarih" Type="smalldatetime" Nullable="false" />
+    <Property Name="SonOdemeTarihi" Type="date" Nullable="false" />
+    <Property Name="IlkEndeks" Type="int" Nullable="false" />
+    <Property Name="SonEndeks" Type="int" Nullable="false" />
+    <Property Name="Tutar" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IlceAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Il_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Il_Adi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="25" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="10" />
+    <Property Name="Yetki" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TCKN" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SayacNo" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="CepTelefonu" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Il_ID" Type="int" Nullable="false" />
+    <Property Name="Ilce_ID" Type="int" Nullable="false" />
+    <Property Name="AboneTuru" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SuFaturasi_NO2A.dbo.View_MusteriList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_MusteriList">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TCKN" />
+      <PropertyRef Name="AdSoyad" />
+      <PropertyRef Name="SayacNo" />
+      <PropertyRef Name="CepTelefonu" />
+      <PropertyRef Name="Adres" />
+      <PropertyRef Name="Il_ID" />
+      <PropertyRef Name="Ilce_ID" />
+      <PropertyRef Name="IlceAdi" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TCKN" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SayacNo" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="CepTelefonu" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Il_ID" Type="int" Nullable="false" />
+    <Property Name="Ilce_ID" Type="int" Nullable="false" />
+    <Property Name="Il_Adi" Type="nvarchar" MaxLength="255" />
+    <Property Name="IlceAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SuFaturasi_NO2AModelStoreContainer">
+    <EntitySet Name="Fatura" EntityType="Self.Fatura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_MusteriList" EntityType="Self.View_MusteriList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_MusteriList].[ID] AS [ID], 
+    [View_MusteriList].[TCKN] AS [TCKN], 
+    [View_MusteriList].[AdSoyad] AS [AdSoyad], 
+    [View_MusteriList].[SayacNo] AS [SayacNo], 
+    [View_MusteriList].[CepTelefonu] AS [CepTelefonu], 
+    [View_MusteriList].[Adres] AS [Adres], 
+    [View_MusteriList].[Il_ID] AS [Il_ID], 
+    [View_MusteriList].[Ilce_ID] AS [Ilce_ID], 
+    [View_MusteriList].[Il_Adi] AS [Il_Adi], 
+    [View_MusteriList].[IlceAdi] AS [IlceAdi]
+    FROM [dbo].[View_MusteriList] AS [View_MusteriList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

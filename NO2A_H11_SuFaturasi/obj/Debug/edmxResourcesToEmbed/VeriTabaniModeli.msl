@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SuFaturasi_NO2AModelStoreContainer" CdmEntityContainer="SuFaturasi_NO2AEntities">
+    <EntitySetMapping Name="ilceler">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+          <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Il_Adi" ColumnName="Il_Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Musteri">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="AboneTuru" ColumnName="AboneTuru" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="SayacNo" ColumnName="SayacNo" />
+          <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+          <ScalarProperty Name="Ilce_ID" ColumnName="Ilce_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_MusteriList">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.View_MusteriList">
+        <MappingFragment StoreEntitySet="View_MusteriList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="SayacNo" ColumnName="SayacNo" />
+          <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Il_ID" ColumnName="Il_ID" />
+          <ScalarProperty Name="Ilce_ID" ColumnName="Ilce_ID" />
+          <ScalarProperty Name="Il_Adi" ColumnName="Il_Adi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fatura">
+      <EntityTypeMapping TypeName="SuFaturasi_NO2AModel.Fatura">
+        <MappingFragment StoreEntitySet="Fatura">
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="SonEndeks" ColumnName="SonEndeks" />
+          <ScalarProperty Name="IlkEndeks" ColumnName="IlkEndeks" />
+          <ScalarProperty Name="SonOdemeTarihi" ColumnName="SonOdemeTarihi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
